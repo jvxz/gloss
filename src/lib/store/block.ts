@@ -1,10 +1,11 @@
 import { create } from 'zustand'
+import { type BlockType } from "@/config"
 
 interface BlockStore {
-    block: string;
-    setBlock: (block: string) => void;
+    block: BlockType;
+    setBlock: (block: BlockType) => void;
 }
 export const useBlockStore = create<BlockStore>((set) => ({
-    block: "pricing",
+    block: "Default",
     setBlock: (block) => set({ block }),
 }));

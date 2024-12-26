@@ -1,30 +1,30 @@
 "use client";
 import { useBlockStore } from "@/lib/store/block";
-import { Button } from "./button";
+import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
+import { blocks } from "@/config";
 
 export default function BlockSelect() {
   const { block, setBlock } = useBlockStore();
 
   return (
-    <div className="flex gap-2">
-      <Button
-        variant={block === "pricing" ? "default" : "outline"}
-        onClick={() => setBlock("pricing")}
+    <div className="flex gap-4">
+      <ToggleGroup
+        value={block}
+        onValueChange={(e) => {
+          if (!e) return;
+          setBlock(e);
+        }}
+        defaultValue="Default"
+        type="single"
       >
-        Pricing
-      </Button>
-      <Button
-        variant={block === "login" ? "default" : "outline"}
-        onClick={() => setBlock("login")}
-      >
-        Login
-      </Button>
-      <Button
-        variant={block === "default" ? "default" : "outline"}
-        onClick={() => setBlock("default")}
-      >
-        Default
-      </Button>
+        {blocks.map((e) => {
+          return (
+            <ToggleGroupItem className="rounded-3xl px-4" key={e} value={e}>
+              {e}
+            </ToggleGroupItem>
+          );
+        })}
+      </ToggleGroup>
     </div>
   );
 }

@@ -10,6 +10,10 @@ export default {
 				sans: [
 					'var(--font-radio-canada-big)',
 					...fontFamily.sans
+				],
+				serif: [
+					'var(--font-dm-serif-text)',
+					...fontFamily.serif
 				]
 			},
 			borderRadius: {
@@ -61,5 +65,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), require("tailwindcss-motion")],
 } satisfies Config;

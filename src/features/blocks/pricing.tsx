@@ -114,7 +114,7 @@ const planFeatures: PlanFeature[] = [
 
 export default function PricingSectionCards() {
   return (
-    <>
+    <div className="motion-preset-fade">
       {/* Pricing */}
       <div className="container py-24 lg:py-32">
         {/* Title */}
@@ -536,6 +536,6 @@ export default function PricingSectionCards() {
         {/* End Comparison table */}
       </div>
       {/* End Pricing */}
-    </>
+    </div>
   );
 }
