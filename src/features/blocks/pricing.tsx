@@ -1,4 +1,9 @@
 import { Badge } from "@/components/ui/badge";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -114,7 +119,21 @@ const planFeatures: PlanFeature[] = [
 
 export default function PricingSectionCards() {
   return (
-    <div className="motion-preset-fade">
+    <div
+      style={
+        {
+          "--motion-reduce": "1",
+          animation: "none",
+          transition: "none",
+          "*": {
+            animation: "none !important",
+            transition: "none !important",
+            transform: "none !important",
+          },
+        } as React.CSSProperties
+      }
+      className="motion-preset-fade bg-background px-8"
+    >
       {/* Pricing */}
       <div className="container py-24 lg:py-32">
         {/* Title */}
@@ -220,7 +239,14 @@ export default function PricingSectionCards() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Sign up</Button>
+              <Popover>
+                <PopoverTrigger>
+                  <Button className="w-full">Sign up</Button>
+                </PopoverTrigger>
+                <PopoverContent>
+                  Place content for the popover here.
+                </PopoverContent>
+              </Popover>
             </CardFooter>
           </Card>
           {/* End Card */}

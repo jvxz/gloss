@@ -4,6 +4,8 @@ import StyleSelectTooltip from "./style-select-tooltip";
 import { Button } from "@/components/ui/button";
 import HueInput from "./hue-input";
 import { HueSlider } from "./hue-slider";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function Sidebar() {
   return (
