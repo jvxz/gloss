@@ -7,7 +7,7 @@ export default function Page() {
         <BlockSelect />
       </nav>
       <div className="flex-1 overflow-hidden">
-        <div className="h-full overflow-y-auto">
+        <div className="motion-preset-focus-sm h-full overflow-y-auto">
           <Blocks />
         </div>
       </div>

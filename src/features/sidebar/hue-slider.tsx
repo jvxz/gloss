@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { useHueStore } from "@/lib/store/hue";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Info } from "lucide-react";
 
 function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
   {
@@ -14,18 +15,20 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
   }: React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>,
   ref: React.ForwardedRef<T>,
 ) {
-  const { hue, setHue } = useHueStore();
+  const { hue, setHue, mode } = useHueStore();
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       <SliderPrimitive.Root
+        disabled={mode === "monochrome"}
         max={359}
         onValueChange={(e) => {
-          if (e[0]) setHue(e[0]);
+          if (e[0]) setHue({ ...hue, base: e[0] });
         }}
         ref={ref}
         className={cn(
           "relative flex w-full touch-none select-none items-center",
+          mode === "monochrome" && "opacity-50",
           className,
         )}
         {...props}
@@ -43,15 +46,22 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
           <div
             className="h-full w-full rounded-full"
             style={{
-              backgroundColor: `hsl(${hue ?? 0}, 100%, 50%)`,
+              backgroundColor: `hsl(${hue.base}, 100%, 50%)`,
             }}
           />
         </SliderPrimitive.Thumb>
       </SliderPrimitive.Root>
-      <Input value={hue} className="max-w-[100px]" />
-      <Label className="text-muted-foreground">
-        You can also paste in a hex value to grab its hue value.
-      </Label>
+      <div className="flex items-center justify-between">
+        <Input
+          disabled={mode === "monochrome"}
+          value={hue.base}
+          className="max-w-[100px]"
+        />
+        <Label className="flex items-center gap-1">
+          <Info className="size-4" />
+          You can also paste a hex code to grab its hue value.
+        </Label>
+      </div>
     </div>
   );
 }

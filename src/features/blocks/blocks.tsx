@@ -6,43 +6,22 @@ import { useTheme } from "next-themes";
 import Login from "./login";
 import PricingBlock from "./PricingBlock";
 import Dashboard from "./dashboard/dashboard";
-// import Dashboard from "./dashboard";
+import { formatHue } from "@/lib/utils";
+import { useStyleStore } from "@/lib/store/style";
 
 export default function Blocks() {
   const { resolvedTheme } = useTheme();
+  const { style } = useStyleStore();
   const { block } = useBlockStore();
-  const { hue } = useHueStore();
+  const { hue, mode } = useHueStore();
 
-  const darkVariables = {
-    "--background": `${hue}, 10%, 4%`,
-    "--foreground": `${hue}, 10%, 4%`,
-    "--card": `${hue}, 10%, 7%`,
-    "--card-foreground": `${hue}, 20%, 95%`,
-    "--popover": `${hue}, 10%, 7%`,
-    "--popover-foreground": `${hue}, 20%, 95%`,
-    "--secondary": `${hue}, 9%, 12%`,
-    "--secondary-foreground": `${hue}, 9%, 95%`,
-    "--muted": `${hue}, 9%, 12%`,
-    "--muted-foreground": `${hue}, 9%, 95%`,
-  } as React.CSSProperties;
-
-  const lightVariables = {
-    "--background": `${hue}, 20%, 96%`,
-    "--foreground": `${hue}, 20%, 6%`,
-    "--card": `${hue}, 20%, 99%`,
-    "--card-foreground": `${hue}, 20%, 6%`,
-    "--popover": `${hue}, 20%, 6%`,
-    "--popover-foreground": `${hue}, 20%, 6%`,
-    "--secondary": `${hue}, 15%, 94%`,
-    "--secondary-foreground": `${hue}, 20%, 6%`,
-    "--muted": `${hue}, 15%, 94%`,
-    "--muted-foreground": `${hue}, 20%, 6%`,
-  } as React.CSSProperties;
+  const base = mode === "colorful" ? hue.base : 0;
+  const variables = formatHue(base, style, mode);
 
   return (
     <div
       className="h-full"
-      style={resolvedTheme === "dark" ? darkVariables : lightVariables}
+      style={resolvedTheme === "dark" ? variables.dark : variables.light}
     >
       {block === "Dashboard" && <Dashboard />}
       {block === "Pricing" && <PricingBlock />}

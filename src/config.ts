@@ -1,4 +1,4 @@
-import { Bird, Eclipse, Flower, Radar } from "lucide-react"
+import { Bird, Eclipse, Flower, Snowflake } from "lucide-react"
 
 export type StyleType = {
     name: string,
@@ -11,21 +11,21 @@ export type BlockType = typeof blocks[number]
 
 export const styles = [
     {
+        name: "Charm",
+        icon: Snowflake
+    },
+    {
         name: "Eclipse",
         icon: Eclipse
+    },
+    {
+        name: "Flocon",
+        icon: Flower
     },
     {
         name: "Oasis",
         icon: Bird
     },
-    {
-        name: "Azure",
-        icon: Flower
-    },
-    {
-        name: "Echo",
-        icon: Radar
-    }
 ] as const
 
 export const blocks = ["Dashboard", "Pricing", "Features", "Login"] as const

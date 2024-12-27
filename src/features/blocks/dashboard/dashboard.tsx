@@ -35,7 +35,7 @@ export default function Dashboard() {
             <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
             <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
-              <Button>Download</Button>
+              <Button variant="secondary">Download</Button>
             </div>
           </div>
           <Tabs defaultValue="overview" className="space-y-4">

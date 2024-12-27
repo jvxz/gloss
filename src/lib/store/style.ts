@@ -1,7 +1,6 @@
 import { type StyleName } from "@/config";
 import { create } from 'zustand'
 
-
 interface StyleStore {
     style: StyleName;
     setStyle: (val: StyleName) => void;

@@ -4,14 +4,14 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export default function ThemeSelect() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
 
   return (
     <Tabs
       onValueChange={(e) => {
         setTheme(e);
       }}
-      value={theme}
+      value={resolvedTheme}
       className="w-full"
     >
       <TabsList className="flex *:flex-1">
