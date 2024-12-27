@@ -22,7 +22,7 @@ export function flocon(hue: number) {
             "--secondary-foreground": `${hue} 0% 100%`,
         } as CSSProperties,
         light: {
-            "--accent": `${hue} 0% 10%`,
+            "--accent": `${hue} 15% 90%`,
             "--accent-foreground": `${hue} 0% 15%`,
             "--background": `${hue} 41% 99%`,
             "--border": `${hue} 16% 77%`,
