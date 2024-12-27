@@ -144,7 +144,7 @@ export function oasis(hue: number) {
             "--muted-foreground": `${hue} 14% 56%`,
             "--popover": `${hue} 5% 10%`,
             "--popover-foreground": `${hue} 8% 98%`,
-            "--primary": `${hue} 10% 37%`,
+            "--primary": `${hue} 10% 80%`,
             "--primary-foreground": `${hue} 0% 96%`,
             "--ring": `${hue} 21% 17%`,
             "--secondary": `${hue} 12% 10%`,

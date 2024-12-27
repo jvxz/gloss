@@ -17,8 +17,8 @@ const DMSerifText = DM_Serif_Text({
 });
 
 export const metadata: Metadata = {
-  title: "gloss ─ theme generator",
-  description: "a theme generator for various frontend libraries",
+  title: "gloss ─ a theme generator for shadcn/ui",
+  description: "a theme generator for shadcn/ui",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 

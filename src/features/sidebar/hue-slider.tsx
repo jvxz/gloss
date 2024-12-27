@@ -18,7 +18,7 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
   const { hue, setHue, mode } = useHueStore();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col">
       <SliderPrimitive.Root
         disabled={mode === "monochrome"}
         max={359}
@@ -57,9 +57,11 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
           value={hue.base}
           className="max-w-[100px]"
         />
-        <Label className="flex items-center gap-1">
-          <Info className="size-4" />
-          You can also paste a hex code to grab its hue value.
+        <Label className="flex items-center gap-2 pl-4">
+          <Info className="size-6" />
+          <p className="text-sm">
+            You can also paste a hex code to grab its hue value.
+          </p>
         </Label>
       </div>
     </div>
