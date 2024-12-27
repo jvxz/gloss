@@ -28,4 +28,4 @@ export const styles = [
     }
 ] as const
 
-export const blocks = ["Default", "Pricing", "Features", "Login"] as const
+export const blocks = ["Dashboard", "Pricing", "Features", "Login"] as const
