@@ -16,9 +16,9 @@ interface HueStore {
 }
 export const useHueStore = create<HueStore>((set) => ({
     hue: {
-        base: 1,
-        primary: 1,
-        accent: 1,
+        base: 185,
+        primary: 185,
+        accent: 185,
     },
     setHue: (val) => set(() => ({ hue: val })),
     mode: "colorful",

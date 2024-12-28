@@ -17,7 +17,7 @@ export default function Sidebar() {
           <p className="text-sm text-muted-foreground">v0.0.1</p>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="secondary">Log in</Button>
+          <Button variant="outline">Log in</Button>
           <Button>Sign up</Button>
         </div>
       </header>
