@@ -33,7 +33,7 @@ export default function SavePreset() {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-2xl">Save preset</DialogTitle>
+          <DialogTitle className="font-serif text-2xl">Save preset</DialogTitle>
           <DialogDescription>
             The following preset will be saved:
           </DialogDescription>

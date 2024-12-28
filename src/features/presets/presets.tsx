@@ -35,7 +35,7 @@ export default function Presets() {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Presets</SheetTitle>
+            <SheetTitle className="font-serif text-2xl">Presets</SheetTitle>
             <SheetDescription>
               <p>
                 Presets are saved to your account, allowing access to any device
@@ -60,7 +60,7 @@ export default function Presets() {
               style={{
                 backgroundColor: presetColor,
               }}
-              className="flex h-24 items-center justify-around gap-2 rounded-md p-2"
+              className="flex h-24 items-center justify-around gap-2 rounded-md p-2 shadow"
             >
               <div className="flex flex-col items-center justify-center gap-2 text-background dark:text-foreground">
                 <p>Untitled</p>

@@ -1,6 +1,5 @@
 import Providers from "@/components/providers";
 import "@/styles/globals.css";
-import Sidebar from "@/features/sidebar/sidebar";
 import { type Metadata } from "next";
 import { Radio_Canada_Big, DM_Serif_Text } from "next/font/google";
 
@@ -32,10 +31,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <main className="flex h-screen">
-            <Sidebar />
-            {children}
-          </main>
+          <main className="flex h-screen">{children}</main>
         </Providers>
       </body>
     </html>
