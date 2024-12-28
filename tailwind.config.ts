@@ -65,5 +65,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), require("tailwindcss-motion"), require("tailwindcss-debug-screens")],
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography"), require("tailwindcss-motion"), require("tailwindcss-debug-screens"), require("@designbycode/tailwindcss-text-shadow")],
 } satisfies Config;

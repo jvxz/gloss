@@ -13,7 +13,9 @@ export default function Sidebar() {
     <section className="top-0 flex max-h-screen w-[570px] flex-col border-r border-border lg:min-w-[400px]">
       <header className="flex h-20 items-center justify-between border-b border-border px-6">
         <div className="flex items-end gap-1">
-          <h1 className="font-serif text-3xl font-bold">gloss</h1>
+          <h1 className="text-shadow-lg text-shadow-background/60 font-serif text-3xl font-bold">
+            gloss
+          </h1>
           <p className="text-sm text-muted-foreground">v0.0.1</p>
         </div>
         <div className="flex items-center gap-2">

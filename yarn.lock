@@ -14,6 +14,11 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@designbycode/tailwindcss-text-shadow@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@designbycode/tailwindcss-text-shadow/-/tailwindcss-text-shadow-2.2.1.tgz#739142f27e111a4c302adc538a4753ca86c5e4a6"
+  integrity sha512-TTy4zil7KntCTryQg4PTiba7HVPoxEvrmvp+1pbN4UdwSR1WfKJ8dZu5/5XH2O5EndyRrAft9MpvSn9MqF5QnQ==
+
 "@emnapi/runtime@^1.2.0":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.3.1.tgz#0fcaa575afc31f455fd33534c19381cfce6c6f60"
