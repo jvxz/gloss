@@ -13,9 +13,15 @@ export default function HueInput() {
   const [value, setValue] = useState([100]);
 
   const decreaseValue = () =>
-    setValue((prev) => [Math.max(minValue, prev[0] - steps)]);
+    setValue((prev) => {
+      if (!prev[0]) return [minValue];
+      return [Math.max(minValue, prev[0] - steps)];
+    });
   const increaseValue = () =>
-    setValue((prev) => [Math.min(maxValue, prev[0] + steps)]);
+    setValue((prev) => {
+      if (!prev[0]) return [maxValue];
+      return [Math.min(maxValue, prev[0] + steps)];
+    });
 
   return (
     <>
