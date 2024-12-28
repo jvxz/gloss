@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { styles } from "@/config";
+import { styles } from "@/lib/config";
 import { useStyleStore } from "@/lib/store/style";
 
 export default function StyleSelect() {

@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { type StyleName } from "@/config";
+import { type StyleName } from "@/lib/config";
 import { flocon, charm, eclipse, oasis } from "./hue-formulas/colorful";
 import { floconMono, charmMono, eclipseMono, oasisMono } from "./hue-formulas/monochrome";
 

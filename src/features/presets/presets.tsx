@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import SavePreset from "./save-preset";
 import { Scroll, FileQuestion } from "lucide-react";
-import { styles } from "@/config";
+import { styles } from "@/lib/config";
 import { useHueStore } from "@/lib/store/hue";
 import { useStyleStore } from "@/lib/store/style";
 

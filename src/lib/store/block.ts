@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { type BlockType } from "@/config"
+import { type BlockType } from "@/lib/config"
 
 interface BlockStore {
     block: BlockType;

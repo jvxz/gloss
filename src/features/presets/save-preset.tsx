@@ -9,7 +9,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { styles } from "@/config";
+import { styles } from "@/lib/config";
 import { useHueStore } from "@/lib/store/hue";
 import { useStyleStore } from "@/lib/store/style";
 import { Plus } from "lucide-react";

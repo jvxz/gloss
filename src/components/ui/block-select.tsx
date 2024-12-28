@@ -1,7 +1,7 @@
 "use client";
 import { useBlockStore } from "@/lib/store/block";
 import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
-import { blocks, type BlockType } from "@/config";
+import { blocks, type BlockType } from "@/lib/config";
 
 export default function BlockSelect() {
   const { block, setBlock } = useBlockStore();
