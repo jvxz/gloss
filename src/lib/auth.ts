@@ -24,5 +24,10 @@ export const auth = betterAuth({
             clientId: process.env.DISCORD_CLIENT_ID!,
             clientSecret: process.env.DISCORD_CLIENT_SECRET!,
         }
-    }
+    },
+    user: {
+        deleteUser: {
+            enabled: true,
+        }
+    },
 });
