@@ -15,7 +15,7 @@ export default function SignIn() {
     <div className="grid w-full grow items-center px-4 sm:justify-center">
       <div className="motion-preset-fade flex flex-col gap-4">
         <p className="text-center font-serif text-4xl font-bold">gloss</p>
-        <Card className="w-[17vw]">
+        <Card className="w-[24vw]">
           <CardHeader>
             <CardTitle className="text-center font-serif text-2xl font-bold">
               Welcome back

@@ -1,4 +1,5 @@
 import Providers from "@/components/providers";
+import { Toaster } from "@/components/ui/toaster";
 import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Radio_Canada_Big, DM_Serif_Text } from "next/font/google";
@@ -31,7 +32,10 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <main className="flex h-screen">{children}</main>
+          <main className="flex h-screen">
+            {children}
+            <Toaster />
+          </main>
         </Providers>
       </body>
     </html>

@@ -1,13 +1,14 @@
-"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { signOut, useSession } from "@/lib/auth-client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useRouter } from "next/navigation";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import SignOutButton from "./sign-out-button";
 
-export default function SidebarHeader() {
-  const router = useRouter();
-  const session = useSession();
+export default async function SidebarHeader() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
   return (
     <header className="flex h-20 items-center justify-between border-b border-border px-6">
@@ -27,22 +28,13 @@ export default function SidebarHeader() {
             <Avatar className="size-8">
               <AvatarImage
                 src={
-                  session.data?.user.image ??
+                  session.user.image ??
                   `https://avatar.vercel.sh/712364508913465.jpg`
                 }
               />
-              <AvatarFallback>
-                {session.data?.user.name?.charAt(0)}
-              </AvatarFallback>
+              <AvatarFallback>{session.user.name?.slice(0, 2)}</AvatarFallback>
             </Avatar>
-            <Button
-              onClick={async () => {
-                await signOut();
-                router.push("/");
-              }}
-            >
-              Sign out
-            </Button>
+            <SignOutButton />
           </div>
         )}
       </div>
