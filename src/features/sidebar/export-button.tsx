@@ -59,7 +59,7 @@ export default function ExportButton() {
             />
             <ScrollArea
               scrollbar={false}
-              className="relative h-[450px] rounded-sm border border-border bg-black/50 p-4 text-xs"
+              className="relative h-[450px] rounded-sm border border-border bg-black p-4 text-xs dark:bg-black/50"
             >
               <div className="absolute right-0 top-0 p-2">
                 <CopyButton text={data} variant="ghost" />

@@ -28,7 +28,7 @@ export default function CopyButton({
     <Button
       variant={variant}
       size="icon"
-      className="disabled:opacity-100"
+      className="text-background hover:bg-background/30 hover:text-background dark:text-foreground dark:hover:bg-foreground/20"
       onClick={handleCopy}
       aria-label={copied ? "Copied" : "Copy to clipboard"}
       disabled={copied}

@@ -1,7 +1,7 @@
 "use client";
 
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { useDeleteAccountDialogStore } from "./auth/delete-account-dialog";
+import { useDeleteAccountDialogStore } from "../auth/delete-account-dialog";
 
 export default function DeleteAccountItem() {
   const { open } = useDeleteAccountDialogStore();

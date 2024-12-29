@@ -1,79 +1,94 @@
 import {
-  DollarSign,
-  MessagesSquare,
-  PersonStanding,
-  Timer,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  BookCheck,
+  ChartPie,
+  FolderSync,
+  Goal,
+  Users,
   Zap,
-  ZoomIn,
 } from "lucide-react";
 
 const features = [
   {
-    title: "Performance",
+    icon: Goal,
+    title: "Identify Opportunities",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <Timer className="size-4 md:size-6" />,
+      "Easily uncover untapped areas to explore and expand your reach effortlessly and effectively.",
   },
   {
-    title: "Innovation",
+    icon: BookCheck,
+    title: "Build Authority",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <Zap className="size-4 md:size-6" />,
+      "Create valuable content that resonates, inspires trust, and positions you as an expert.",
   },
   {
-    title: "Quality",
+    icon: ChartPie,
+    title: "Instant Insights",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <ZoomIn className="size-4 md:size-6" />,
+      "Gain immediate, actionable insights with a quick glance, enabling fast decision-making.",
   },
   {
-    title: "Accessibility",
+    icon: Users,
+    title: "Engage with Your Audience",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <PersonStanding className="size-4 md:size-6" />,
+      "Boost audience engagement with interactive features like polls, quizzes, and forms.",
   },
   {
-    title: "Affordability",
+    icon: FolderSync,
+    title: "Automate Your Workflow",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <DollarSign className="size-4 md:size-6" />,
+      "Streamline your processes by automating repetitive tasks, saving time and reducing effort.",
   },
   {
-    title: "Customer Support",
+    icon: Zap,
+    title: "Accelerate Growth",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium quam. Temporibus quae quos deserunt!",
-    icon: <MessagesSquare className="size-4 md:size-6" />,
+      "Supercharge your growth by implementing strategies that drive results quickly and efficiently.",
   },
 ];
 
-const Feature17 = () => {
+const Features04Page = () => {
   return (
-    <section className="grid h-full place-items-center bg-background">
-      <div className="container mx-auto max-w-screen-xl">
-        <p className="mb-4 text-xs text-muted-foreground md:pl-5">Features</p>
-        <h2 className="text-3xl font-medium md:pl-5 lg:text-4xl">
-          Our Core Features
+    <div className="flex min-h-full items-center justify-center bg-background">
+      <div className="w-full max-w-screen-lg px-6 py-12">
+        <h2 className="max-w-lg text-4xl font-black tracking-tight md:text-5xl md:leading-[3.5rem]">
+          Boost Your Strategy with Smart Features
         </h2>
-        <div className="mx-auto mt-14 grid gap-x-20 gap-y-8 md:grid-cols-2 md:gap-y-6 lg:mt-20">
-          {features.map((feature, idx) => (
-            <div className="flex gap-6 rounded-lg md:block md:p-5" key={idx}>
-              <span className="mb-8 flex size-10 shrink-0 items-center justify-center rounded-full bg-accent md:size-12">
-                {feature.icon}
-              </span>
-              <div>
-                <h3 className="font-medium md:mb-2 md:text-xl">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground md:text-base">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="mx-auto mt-6 grid w-full gap-12 md:mt-8 md:grid-cols-2">
+          <div>
+            <Accordion defaultValue="item-0" type="single" className="w-full">
+              {features.map(({ title, description, icon: Icon }, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="data-[state=open]:border-b-2 data-[state=open]:border-primary"
+                >
+                  <AccordionTrigger className="text-lg [&>svg]:hidden">
+                    <div className="flex items-center gap-4">
+                      <Icon />
+                      {title}
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[17px] leading-relaxed text-muted-foreground">
+                    {description}
+                    <div className="mb-2 mt-6 aspect-video w-full rounded-xl bg-muted md:hidden" />
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Media */}
+          <div className="hidden h-full w-full rounded-xl bg-muted md:block" />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Feature17;
+export default Features04Page;

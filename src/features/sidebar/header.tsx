@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import SignOutItem from "./sign-out-button";
-import DeleteAccountItem from "../delete-account-item";
+import DeleteAccountItem from "./delete-account-item";
 import DeleteAccountDialog from "../auth/delete-account-dialog";
 
 export default async function SidebarHeader() {
