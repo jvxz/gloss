@@ -13,7 +13,7 @@ import LoadingButton from "@/components/ui/loading-button";
 import { create } from "zustand";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
-import { deletePresets } from "../presets/actions/delete";
+import { deletePresets } from "../navbar/presets/actions/delete";
 
 interface DeleteAccountDialogStore {
   isOpen: boolean;

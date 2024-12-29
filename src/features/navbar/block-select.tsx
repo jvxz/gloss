@@ -1,6 +1,6 @@
 "use client";
 import { useBlockStore } from "@/lib/store/block";
-import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { blocks, type BlockType } from "@/lib/config";
 
 export default function BlockSelect() {
