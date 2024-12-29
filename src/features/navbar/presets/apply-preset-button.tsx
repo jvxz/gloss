@@ -11,9 +11,10 @@ export default function ApplyPresetButton({
   preset: {
     hue: string;
     style: string;
+    mode: "colorful" | "monochrome";
   };
 }) {
-  const { hue, setHue } = useHueStore();
+  const { hue, setHue, setMode } = useHueStore();
   const { setStyle } = useStyleStore();
 
   return (
@@ -24,6 +25,7 @@ export default function ApplyPresetButton({
       onClick={() => {
         setHue({ ...hue, base: Number(preset.hue) });
         setStyle(preset.style as StyleName);
+        setMode(preset.mode);
       }}
     >
       <CloudDownload className="size-6" />

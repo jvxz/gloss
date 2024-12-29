@@ -60,7 +60,10 @@ export default async function Presets() {
                     <div
                       key={preset.id}
                       style={{
-                        backgroundColor: presetCardColor(preset.preset.hue),
+                        backgroundColor:
+                          preset.preset.mode === "colorful"
+                            ? presetCardColor(preset.preset.hue)
+                            : "hsl(0, 0%, 50%)",
                       }}
                       className="group my-4 flex h-24 items-center justify-evenly gap-2 rounded-md p-2 text-background dark:text-foreground"
                     >

@@ -53,6 +53,7 @@ export const userPreset = pgTable("user_preset", {
     preset: json("preset").notNull().$type<{
         hue: string;
         style: string;
+        mode: "colorful" | "monochrome";
     }>(),
     createdAt: timestamp("created_at").notNull(),
     updatedAt: timestamp("updated_at").notNull(),

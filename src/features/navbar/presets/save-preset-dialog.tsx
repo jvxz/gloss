@@ -34,6 +34,7 @@ export default function SavePreset({ disabled }: { disabled?: boolean }) {
   const preset = {
     hue: hue.base.toString(),
     style,
+    mode,
   };
 
   return (
@@ -53,7 +54,10 @@ export default function SavePreset({ disabled }: { disabled?: boolean }) {
         </DialogHeader>
         <div
           style={{
-            backgroundColor: presetCardColor(presetHue),
+            backgroundColor:
+              mode === "colorful"
+                ? presetCardColor(presetHue)
+                : "hsl(0, 0%, 50%)",
           }}
           className="flex h-24 items-center justify-around gap-2 rounded-md p-2"
         >

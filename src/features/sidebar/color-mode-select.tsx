@@ -3,12 +3,13 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useHueStore } from "@/lib/store/hue";
 
 export default function ColorModeSelect() {
-  const { setMode } = useHueStore();
+  const { setMode, mode } = useHueStore();
 
   return (
     <Tabs
       defaultValue="colorful"
       className="w-full"
+      value={mode}
       onValueChange={(value) => {
         setMode(value as "colorful" | "monochrome");
       }}
