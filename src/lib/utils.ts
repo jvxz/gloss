@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx"
+import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { type StyleName } from "@/lib/config";
 import { flocon, charm, eclipse, oasis } from "./hue-formulas/colorful";
@@ -14,9 +14,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatHue(hue: number, type: StyleName, mode: "colorful" | "monochrome") {
-  const isMonochrome = mode === "monochrome";
-
-  if (isMonochrome) {
+  if (mode === "monochrome") {
     switch (type) {
       case "Flocon": return floconMono(hue);
       case "Charm": return charmMono(hue);

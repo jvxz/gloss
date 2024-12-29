@@ -1,4 +1,4 @@
-import { pgTable, text, integer, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, boolean, json } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
     id: text("id").primaryKey(),
@@ -44,4 +44,16 @@ export const verification = pgTable("verification", {
     expiresAt: timestamp('expires_at').notNull(),
     createdAt: timestamp('created_at'),
     updatedAt: timestamp('updated_at')
+});
+
+export const userPreset = pgTable("user_preset", {
+    id: text("id").primaryKey(),
+    userId: text("user_id").notNull().references(() => user.id),
+    name: text("name").notNull(),
+    preset: json("preset").notNull().$type<{
+        hue: string;
+        style: string;
+    }>(),
+    createdAt: timestamp("created_at").notNull(),
+    updatedAt: timestamp("updated_at").notNull(),
 });

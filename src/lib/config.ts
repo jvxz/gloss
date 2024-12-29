@@ -29,3 +29,7 @@ export const styles = [
 ] as const
 
 export const blocks = ["Dashboard", "Pricing", "Features", "Login"] as const
+
+export const presetCardColor = (hue: string) => {
+    return `hsl(${hue}, 50%, 50%)`
+}

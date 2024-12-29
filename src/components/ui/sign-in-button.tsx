@@ -29,7 +29,7 @@ export default function SignInButton({
       className="group relative"
       {...props}
     >
-      <span className="flex items-center gap-2 group-data-[loading=true]:text-transparent">
+      <span className="flex items-center gap-2 group-data-[loading=true]:hidden">
         {children}
       </span>
       {isLoading && (
