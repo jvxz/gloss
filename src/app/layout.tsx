@@ -29,8 +29,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${radioCanadaBig.variable} ${DMSerifText.variable}`}
+      suppressHydrationWarning
     >
-      <body>
+      <body suppressHydrationWarning>
         <Providers>
           <main className="flex h-screen">
             {children}
