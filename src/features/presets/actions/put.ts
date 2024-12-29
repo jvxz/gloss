@@ -7,7 +7,7 @@ export const putPreset = async (name: string, userId: string, preset: {
     hue: string,
     style: string,
 }) => {
-    const presets = await db.insert(userPreset).values({
+    await db.insert(userPreset).values({
         createdAt: new Date(),
         id: crypto.randomUUID(),
         name: name || "Untitled",
@@ -15,5 +15,5 @@ export const putPreset = async (name: string, userId: string, preset: {
         updatedAt: new Date(),
         userId,
     })
-    console.log(presets);
+
 };

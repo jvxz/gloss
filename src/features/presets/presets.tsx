@@ -31,7 +31,6 @@ export default async function Presets() {
   };
 
   const presets = await getUserPresets();
-  console.log("presets", JSON.stringify(presets, null, 2));
 
   return (
     <div className="flex items-center gap-2">
