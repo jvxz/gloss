@@ -1,4 +1,4 @@
-import { type StyleName } from "@/config";
+import { type StyleName } from "@/lib/config";
 import { create } from 'zustand'
 
 interface StyleStore {

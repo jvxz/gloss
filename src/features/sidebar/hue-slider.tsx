@@ -25,6 +25,7 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
         onValueChange={(e) => {
           if (e[0]) setHue({ ...hue, base: e[0] });
         }}
+        value={[hue.base]}
         ref={ref}
         className={cn(
           "relative flex w-full touch-none select-none items-center",
