@@ -13,6 +13,7 @@ import LoadingButton from "@/components/ui/loading-button";
 import { create } from "zustand";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { deletePresets } from "../presets/actions/delete";
 
 interface DeleteAccountDialogStore {
   isOpen: boolean;
@@ -25,9 +26,19 @@ export default function DeleteAccountDialog() {
   const { isOpen, close } = useDeleteAccountDialogStore();
 
   const handleDelete = async () => {
+    const session = await authClient.getSession();
+    const uid = session?.data?.user.id;
+
+    if (!uid) return;
+
+    await deletePresets(uid);
+
     await authClient.deleteUser({
       fetchOptions: {
-        onSuccess: () => router.refresh(),
+        onSuccess: () => {
+          close();
+          router.refresh();
+        },
       },
     });
   };

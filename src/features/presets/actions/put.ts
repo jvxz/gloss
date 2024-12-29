@@ -10,7 +10,7 @@ export const putPreset = async (name: string, userId: string, preset: {
     const presets = await db.insert(userPreset).values({
         createdAt: new Date(),
         id: crypto.randomUUID(),
-        name,
+        name: name || "Untitled",
         preset,
         updatedAt: new Date(),
         userId,

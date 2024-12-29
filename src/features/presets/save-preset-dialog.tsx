@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Dialog,
   DialogTrigger,
@@ -22,7 +21,7 @@ import { authClient } from "@/lib/auth-client";
 import { useToast } from "@/hooks/use-toast";
 import { revalidatePresets } from "./actions/revalidate";
 
-export default function SavePreset() {
+export default function SavePreset({ disabled }: { disabled?: boolean }) {
   const { toast } = useToast();
   const [name, setName] = useState("");
   const { style } = useStyleStore();
@@ -39,8 +38,8 @@ export default function SavePreset() {
 
   return (
     <Dialog>
-      <DialogTrigger>
-        <Button>
+      <DialogTrigger disabled={disabled}>
+        <Button onClick={() => setName("")} disabled={disabled}>
           <Plus />
           <p>Save</p>
         </Button>
@@ -49,7 +48,7 @@ export default function SavePreset() {
         <DialogHeader>
           <DialogTitle className="font-serif text-2xl">Save preset</DialogTitle>
           <DialogDescription>
-            The following preset will be saved:
+            The following preset will be saved
           </DialogDescription>
         </DialogHeader>
         <div
@@ -67,11 +66,24 @@ export default function SavePreset() {
             })}
           </div>
         </div>
-        <Input
-          placeholder="Preset name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+
+        <div className="space-y-2">
+          <div className="relative">
+            <Input
+              placeholder="Preset name"
+              id="input-34"
+              className="peer pe-14"
+              type="text"
+              value={name}
+              maxLength={10}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-3 text-xs tabular-nums text-muted-foreground peer-disabled:opacity-50">
+              {name.length}/{10}
+            </div>
+          </div>
+        </div>
+
         <DialogFooter>
           <DialogClose>
             <Button variant="outline">Cancel</Button>
@@ -83,10 +95,8 @@ export default function SavePreset() {
                 await putPreset(name, uid, preset);
                 await revalidatePresets();
                 toast({
-                  title: "Preset saved",
-                  description: "Your preset has been saved",
+                  description: "Your preset has been saved.",
                 });
-                setName("");
               }}
             >
               Save

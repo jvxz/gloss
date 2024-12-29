@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { LoaderCircle } from "lucide-react";
 import { useState } from "react";
 
@@ -8,10 +9,14 @@ export default function LoadingButton({
   onClick,
   variant,
   children,
+  size,
+  className,
 }: {
   onClick?: () => void;
   variant?: ButtonProps["variant"];
   children: React.ReactNode;
+  size?: ButtonProps["size"];
+  className?: string;
 }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -24,9 +29,10 @@ export default function LoadingButton({
     <Button
       variant={variant}
       onClick={handleClick}
+      size={size}
       disabled={isLoading}
       data-loading={isLoading}
-      className="group relative"
+      className={cn("group relative", className)}
     >
       <span className="group-data-[loading=true]:text-transparent">
         {children}

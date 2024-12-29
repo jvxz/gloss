@@ -1,13 +1,27 @@
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { type NextRequest, NextResponse } from "next/server";
+import { betterFetch } from "@better-fetch/fetch";
+import type { auth } from "@/lib/auth";
+import { NextResponse, type NextRequest } from "next/server";
 
-export default async function middleware(req: NextRequest) {
-    const session = await auth.api.getSession({
-        headers: await headers(),
-    });
+type Session = typeof auth.$Infer.Session;
 
-    if (session && req.nextUrl.pathname === "/sign-in") {
-        return NextResponse.redirect(new URL("/", req.url));
+export default async function authMiddleware(request: NextRequest) {
+    const { data: session } = await betterFetch<Session>(
+        "/api/auth/get-session",
+        {
+            baseURL: request.nextUrl.origin,
+            headers: {
+                //get the cookie from the request
+                cookie: request.headers.get("cookie") ?? "",
+            },
+        },
+    );
+
+    if (session) {
+        return NextResponse.redirect(new URL("/", request.url));
     }
+    return NextResponse.next();
 }
+
+export const config = {
+    matcher: ["/sign-in"],
+};

@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { HueSlider } from "./hue-slider";
 import ColorModeSelect from "./color-mode-select";
 import ResetButton from "./reset-button";
-import { Download } from "lucide-react";
+import { Dices, Download } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import SidebarHeader from "./header";
+import RandomizePresetButton from "./randomize-preset-button";
 
 export default function Sidebar() {
   return (
@@ -33,13 +34,15 @@ export default function Sidebar() {
             <HueSlider />
           </div>
         </div>
-        <div className="flex flex-1 items-end gap-2 p-4 *:flex-1">
-          <ResetButton />
-
-          <Button>
-            <Download />
-            Export
-          </Button>
+        <div className="flex h-full flex-col justify-end gap-2 p-4">
+          <RandomizePresetButton />
+          <div className="flex w-full items-center gap-2 *:flex-1">
+            <ResetButton />
+            <Button>
+              <Download />
+              Export
+            </Button>
+          </div>
         </div>
       </article>
     </section>
