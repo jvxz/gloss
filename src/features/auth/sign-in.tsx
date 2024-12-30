@@ -14,7 +14,7 @@ import { Link } from "next-view-transitions";
 
 export default function SignIn() {
   return (
-    <div className="grid w-full grow items-center px-4 sm:justify-center">
+    <div className="grid h-screen w-full grow items-center justify-center px-4">
       <div className="motion-preset-fade flex flex-col gap-4">
         <Link
           href="/"
@@ -22,7 +22,7 @@ export default function SignIn() {
         >
           gloss
         </Link>
-        <Card className="w-[24vw]">
+        <Card className="w-[300px] md:w-[400px]">
           <CardHeader>
             <CardTitle className="text-center font-serif text-2xl font-bold">
               Welcome back

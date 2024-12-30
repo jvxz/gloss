@@ -1,10 +1,16 @@
 import { betterFetch } from "@better-fetch/fetch";
 import type { auth } from "@/lib/auth";
 import { NextResponse, type NextRequest } from "next/server";
+import { isMobile } from "./lib/utils";
 
 type Session = typeof auth.$Infer.Session;
 
 export default async function authMiddleware(request: NextRequest) {
+    const mobile = isMobile(request.headers.get("user-agent"));
+    if (mobile) {
+        return NextResponse.redirect(new URL("/", request.url));
+    }
+
     const { data: session } = await betterFetch<Session>(
         "/api/auth/get-session",
         {
@@ -23,5 +29,5 @@ export default async function authMiddleware(request: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/sign-in"],
+    matcher: ["/sign-in", "/privacy"],
 };
