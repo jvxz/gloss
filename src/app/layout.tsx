@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${radioCanadaBig.variable} ${DMSerifText.variable} debug-screens`}
+      className={`${radioCanadaBig.variable} ${DMSerifText.variable}`}
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
