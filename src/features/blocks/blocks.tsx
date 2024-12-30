@@ -5,11 +5,11 @@ import { useHueStore } from "@/lib/store/hue";
 import { useTheme } from "next-themes";
 import Login from "./login";
 import PricingBlock from "./PricingBlock";
-import Dashboard from "./dashboard/dashboard";
 import { formatHue } from "@/lib/utils";
 import { useStyleStore } from "@/lib/store/style";
 import { useMounted } from "@/hooks/use-mounted";
 import { Loader2 } from "lucide-react";
+import Blog from "./blog";
 
 export default function Blocks() {
   const mounted = useMounted();
@@ -33,7 +33,7 @@ export default function Blocks() {
       className="motion-preset-fade-lg h-full"
       style={resolvedTheme === "dark" ? variables.dark : variables.light}
     >
-      {block === "Dashboard" && <Dashboard />}
+      {block === "Blog" && <Blog />}
       {block === "Pricing" && <PricingBlock />}
       {block === "Features" && <Features />}
       {block === "Login" && <Login />}
