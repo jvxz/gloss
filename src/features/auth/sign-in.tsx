@@ -10,19 +10,18 @@ import {
 } from "@/components/ui/card";
 import Icons from "@/components/ui/icons";
 import SignInButton from "@/components/ui/sign-in-button";
-import Link from "next/link";
-import { Link as TransitionLink } from "next-view-transitions";
+import { Link } from "next-view-transitions";
 
 export default function SignIn() {
   return (
     <div className="grid w-full grow items-center px-4 sm:justify-center">
       <div className="motion-preset-fade flex flex-col gap-4">
-        <TransitionLink
+        <Link
           href="/"
           className="text-center font-serif text-4xl font-bold underline-offset-4 hover:underline"
         >
           gloss
-        </TransitionLink>
+        </Link>
         <Card className="w-[24vw]">
           <CardHeader>
             <CardTitle className="text-center font-serif text-2xl font-bold">
@@ -60,10 +59,11 @@ export default function SignIn() {
           </CardContent>
         </Card>
         <Button
+          asChild
           variant="link"
           className="text-center text-sm text-muted-foreground hover:text-foreground"
         >
-          Learn about how your data is handled
+          <Link href="/privacy">Learn how your data is handled</Link>
         </Button>
       </div>
     </div>
