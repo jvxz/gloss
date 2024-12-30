@@ -1,4 +1,5 @@
 import Providers from "@/components/providers";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/toaster";
 import "@/styles/globals.css";
 import { type Metadata } from "next";
@@ -36,6 +37,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </Providers>
+        <TailwindIndicator />
       </body>
     </html>
   );
