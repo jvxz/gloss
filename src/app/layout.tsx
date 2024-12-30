@@ -28,15 +28,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${radioCanadaBig.variable} ${DMSerifText.variable}`}
+      className={`${radioCanadaBig.variable} ${DMSerifText.variable} debug-screens`}
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
         <Providers>
-          <main className="flex h-screen">
-            {children}
-            <Toaster />
-          </main>
+          {children}
+          <Toaster />
         </Providers>
       </body>
     </html>

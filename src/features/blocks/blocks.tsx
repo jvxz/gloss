@@ -10,7 +10,6 @@ import { formatHue } from "@/lib/utils";
 import { useStyleStore } from "@/lib/store/style";
 import { useMounted } from "@/hooks/use-mounted";
 import { Loader2 } from "lucide-react";
-import exportTheme from "@/lib/hue-formulas/export";
 
 export default function Blocks() {
   const mounted = useMounted();
@@ -21,8 +20,6 @@ export default function Blocks() {
 
   const base = mode === "colorful" ? hue.base : 0;
   const variables = formatHue(base, style, mode);
-  const theme = exportTheme(variables);
-  console.log(theme);
   if (!mounted) {
     return (
       <div className="flex h-full items-center justify-center">
