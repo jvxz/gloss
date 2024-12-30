@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           Your provider passwords are never seen by anyone involved with gloss.
           There are no (and will never be) any intentions of stealing your data.
           Feel free to read{" "}
-          <Link href="https://github.com/your-username/gloss" target="_blank">
+          <Link href="https://github.com/jvxz/gloss" target="_blank">
             the source code
           </Link>
           .
