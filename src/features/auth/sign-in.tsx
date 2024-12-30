@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Icons from "@/components/ui/icons";
+import { Icons } from "@/components/ui/icons";
 import SignInButton from "@/components/ui/sign-in-button";
 import { Link } from "next-view-transitions";
 

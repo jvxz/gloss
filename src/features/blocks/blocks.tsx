@@ -10,6 +10,7 @@ import { useStyleStore } from "@/lib/store/style";
 import { useMounted } from "@/hooks/use-mounted";
 import { Loader2 } from "lucide-react";
 import Blog from "./blog";
+import Cards from "./cards/page";
 
 export default function Blocks() {
   const mounted = useMounted();
@@ -33,7 +34,7 @@ export default function Blocks() {
       className="motion-preset-fade-lg h-full"
       style={resolvedTheme === "dark" ? variables.dark : variables.light}
     >
-      {block === "Blog" && <Blog />}
+      {block === "Cards" && <Cards />}
       {block === "Pricing" && <PricingBlock />}
       {block === "Features" && <Features />}
       {block === "Login" && <Login />}

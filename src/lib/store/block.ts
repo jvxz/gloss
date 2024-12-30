@@ -6,6 +6,6 @@ interface BlockStore {
     setBlock: (block: BlockType) => void;
 }
 export const useBlockStore = create<BlockStore>((set) => ({
-    block: "Blog",
+    block: "Cards",
     setBlock: (block) => set({ block }),
 }));
