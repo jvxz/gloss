@@ -21,18 +21,14 @@ export default function PrivacyPage() {
 
         <h2>How your data is handled</h2>
         <p>
-          When developing gloss, I was keen on providing a secure method of
-          authentication, while making it as simple as possible for the
-          developer and the user. With{" "}
+          When developing gloss, providing a secure method of authentication,
+          while making it as simple as possible for the developer and the user,
+          was of utmost importance. This service uses{" "}
           <Link href="https://oauth.net/2/" target="_blank">
             OAuth 2.0
           </Link>{" "}
-          being a feature of{" "}
-          <Link href="https://better-auth.com" target="_blank">
-            better-auth
-          </Link>
-          , it was apparent that this was the best method of authentication for
-          my liking.
+          to authenticate users, allowing for a simple sign-in process with
+          their provider of choice.
         </p>
 
         <p>
@@ -74,7 +70,7 @@ export default function PrivacyPage() {
           <li>
             <strong>
               <Link href="https://better-auth.com" target="_blank">
-                Better Auth
+                better-auth
               </Link>
             </strong>{" "}
             - Authentication library
@@ -99,7 +95,7 @@ export default function PrivacyPage() {
         <p>
           If you have any questions about this privacy policy or how your data
           is handled, please open an issue on{" "}
-          <Link href="https://github.com/jvxz/gloss" target="_blank">
+          <Link href="https://github.com/jvxz/gloss/issues/new" target="_blank">
             GitHub
           </Link>
           .
