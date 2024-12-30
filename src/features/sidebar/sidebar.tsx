@@ -10,7 +10,7 @@ import ExportButton from "./export-button";
 
 export default function Sidebar() {
   return (
-    <section className="top-0 flex max-h-screen flex-col border-r border-border md:w-[450px] lg:w-[500px] xl:w-[620px]">
+    <section className="top-0 flex max-h-screen min-w-[350px] flex-col border-r border-border lg:min-w-[450px] xl:min-w-[470px]">
       <SidebarHeader />
       <article className="motion-preset-fade flex h-full flex-1 flex-col">
         <div className="prose prose-neutral flex w-full flex-col gap-2 p-4 dark:prose-invert">
