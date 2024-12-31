@@ -22,7 +22,7 @@ export default async function authMiddleware(request: NextRequest) {
         },
     );
 
-    if (session) {
+    if (session && request.nextUrl.pathname !== "/privacy") {
         return NextResponse.redirect(new URL("/", request.url));
     }
     return NextResponse.next();
