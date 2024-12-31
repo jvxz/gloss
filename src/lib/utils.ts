@@ -32,7 +32,7 @@ export function formatHue(hue: number, type: StyleName, mode: "colorful" | "mono
 }
 
 export const isMobile = (userAgent: string | null) => {
-  if (!userAgent) return;
+  if (!userAgent) throw new Error("Could not get user agent");
   return /android.+mobile|ip(hone|[oa]d)/i.test(userAgent);
 };
 
