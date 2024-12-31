@@ -6,12 +6,15 @@ export async function GET(request: Request) {
     const slug = url.split("/").pop()
 
     const theme = slug?.split("-")
-    if (theme?.[0] && theme[0]?.length > 3) {
+    if (theme?.[0] && theme[0]?.length !== 3) {
         return Response.json({ error: "Invalid theme" }, { status: 400 })
     }
+
     const hue = theme?.[0]
     const style = theme?.[1] as StyleName
-    const variables = formatHue(Number(hue), style, "colorful")
+    const mode = theme?.[2] as "colorful" | "monochrome"
+
+    const variables = formatHue(Number(hue), style, mode)
 
     if (!variables) return Response.json({ error: "Could not generate variables" }, { status: 400 })
     if (!slug) return Response.json({ error: "Could not generate slug" }, { status: 400 })
