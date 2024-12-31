@@ -23,7 +23,9 @@ export default function Sidebar() {
             Select your style:
           </div>
           <StyleSelect />
-          <Label>More styles will be added in the future.</Label>
+          <Label className="text-sm text-muted-foreground">
+            More styles will be added in the future.
+          </Label>
         </div>
         <div className="prose prose-neutral flex w-full flex-col gap-2 p-4 dark:prose-invert">
           Edit your colors:
