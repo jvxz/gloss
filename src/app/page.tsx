@@ -7,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Link } from "next-view-transitions";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
+import ScreenSizeDialog from "@/components/screen-size-dialog";
 
 export default async function Page() {
   const headersList = await headers();
@@ -24,6 +25,7 @@ export default async function Page() {
           </div>
         </div>
       </section>
+      <ScreenSizeDialog />
     </main>
   ) : (
     <div className="motion-preset-fade grid h-screen place-items-center">
