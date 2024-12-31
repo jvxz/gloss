@@ -55,7 +55,7 @@ export default function ExportButton() {
         {data ? (
           <>
             <CommandCopy
-              command={`npx shadcn@latest add https://gloss.wisp.bio/api/theme/${hue.base}-${style}`}
+              command={`npx shadcn@latest add https://gloss.wisp.bio/api/theme/${hue.base}-${style}-${mode}`}
             />
             <ScrollArea
               scrollbar={false}
