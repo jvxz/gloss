@@ -42,7 +42,7 @@ export function DemoShareDocument() {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex items-center space-x-4">
                 <Avatar>
-                  <AvatarImage src="/avatars/03.png" />
+                  <AvatarImage src="https://avatar.vercel.sh/03.png" />
                   <AvatarFallback>OM</AvatarFallback>
                 </Avatar>
                 <div>
@@ -65,7 +65,7 @@ export function DemoShareDocument() {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex items-center space-x-4">
                 <Avatar>
-                  <AvatarImage src="/avatars/05.png" />
+                  <AvatarImage src="https://avatar.vercel.sh/05.png" />
                   <AvatarFallback>IN</AvatarFallback>
                 </Avatar>
                 <div>
@@ -88,7 +88,7 @@ export function DemoShareDocument() {
             <div className="flex items-center justify-between space-x-4">
               <div className="flex items-center space-x-4">
                 <Avatar>
-                  <AvatarImage src="/avatars/01.png" />
+                  <AvatarImage src="https://avatar.vercel.sh/01.png" />
                   <AvatarFallback>SD</AvatarFallback>
                 </Avatar>
                 <div>

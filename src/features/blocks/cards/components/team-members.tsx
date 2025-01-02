@@ -36,7 +36,7 @@ export function DemoTeamMembers() {
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
             <Avatar>
-              <AvatarImage src="/avatars/01.png" />
+              <AvatarImage src="https://avatar.vercel.sh/01.png" />
               <AvatarFallback>OM</AvatarFallback>
             </Avatar>
             <div>
@@ -89,7 +89,7 @@ export function DemoTeamMembers() {
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
             <Avatar>
-              <AvatarImage src="/avatars/02.png" />
+              <AvatarImage src="https://avatar.vercel.sh/02.png" />
               <AvatarFallback>JL</AvatarFallback>
             </Avatar>
             <div>
