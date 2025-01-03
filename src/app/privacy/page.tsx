@@ -85,7 +85,7 @@ export default function PrivacyPage() {
             <strong>
               <Link href="https://discord.com" target="_blank">
                 Discord
-              </Link>
+              </Link>{" "}
             </strong>
             - OAuth providers
           </li>
