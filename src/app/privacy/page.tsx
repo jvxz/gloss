@@ -33,9 +33,9 @@ export default function PrivacyPage() {
 
         <p>
           When you sign in, a token is generated from the third-party provider
-          that is specific to your account, meaning none of your credentials are
+          that is specific to your account, meaning none of your passwords are
           sent to the server. This token is used to authenticate you when you
-          sign in. The token, along with a unique id for your account, is then
+          sign in. The token, along with a unique ID for your account, is then
           stored on a PostgreSQL database hosted on{" "}
           <Link href="https://neon.tech" target="_blank">
             Neon
