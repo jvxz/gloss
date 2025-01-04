@@ -20,7 +20,7 @@ const DMSerifText = DM_Serif_Text({
 export const metadata: Metadata = {
   title: "gloss ─ a theme generator for shadcn/ui",
   description: "a theme generator for shadcn/ui",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "https://utfs.io/f/KfDq3ZTRzutAcZR2QQunaPXOGRfyDesj0EWSldQUFg1hI3xN" }],
 };
 
 export default function RootLayout({
