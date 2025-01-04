@@ -104,7 +104,7 @@ export default function PrivacyPage() {
         <hr />
 
         <p className="pb-12 text-sm text-muted-foreground">
-          Last updated: {new Date().toLocaleDateString()}
+          Last updated: January 2, 2025
         </p>
       </div>
     </div>
