@@ -1,13 +1,11 @@
 "use client";
 
-import * as React from "react";
-import * as SliderPrimitive from "@radix-ui/react-slider";
-import { cn } from "@/lib/utils";
-import { useHueStore } from "@/lib/store/hue";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Dices, Info } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useHueStore } from "@/lib/store/hue";
+import { cn } from "@/lib/utils";
+import * as SliderPrimitive from "@radix-ui/react-slider";
+import { Blend } from "lucide-react";
+import * as React from "react";
 
 function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
   {
@@ -20,7 +18,7 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
 
   return (
     <div className="flex flex-col">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
         <SliderPrimitive.Root
           disabled={mode === "monochrome"}
           max={359}
@@ -54,7 +52,7 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
             />
           </SliderPrimitive.Thumb>
         </SliderPrimitive.Root>
-        <Button
+        {/* <Button
           variant="ghost"
           className="aspect-square rounded-full"
           size="icon"
@@ -64,20 +62,25 @@ function HueSlider<T extends React.ElementRef<typeof SliderPrimitive.Root>>(
           }}
         >
           <Dices />
-        </Button>
-      </div>
-      <div className="flex items-center justify-between">
-        <Input
-          disabled={mode === "monochrome"}
-          value={hue.base}
-          className="max-w-[100px]"
-        />
-        <Label className="flex items-center gap-2 pl-4">
-          <Info className="size-6" />
-          <p className="text-sm">
-            You can also paste a hex code to grab its hue value.
-          </p>
-        </Label>
+        </Button> */}
+        <div className="space-y-2">
+          <div className="relative">
+            <Input
+              className="peer ps-9"
+              placeholder="Hue"
+              type="hue"
+              value={hue.base}
+              onChange={(e) => {
+                if (!Number(e.target.value)) return;
+                if (Number(e.target.value) > 359) setHue({ ...hue, base: 360 });
+                else setHue({ ...hue, base: Number(e.target.value) });
+              }}
+            />
+            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 text-muted-foreground/80 peer-disabled:opacity-50">
+              <Blend size={16} strokeWidth={2} aria-hidden="true" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
